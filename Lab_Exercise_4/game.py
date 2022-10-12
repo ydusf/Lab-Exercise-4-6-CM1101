@@ -85,8 +85,9 @@ def display_room(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
     """
 
+    print()
     print(room["name"].upper())
-    
+    print()
     print(room["description"])
     
 
