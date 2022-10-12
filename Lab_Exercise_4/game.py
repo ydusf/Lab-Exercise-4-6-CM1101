@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-from genericpath import exists
 from map import rooms
 import string
 
@@ -141,6 +140,7 @@ def print_menu(exits):
     """
 
     print("You can:")
+    print()
     
     # COMPLETE THIS PART:
     # Iterate over available exits:
@@ -148,7 +148,7 @@ def print_menu(exits):
 
     for exit in sorted(exits.keys()):
         print_menu_line(exit, exit_leads_to(exits, exit))
-
+    print()
     print("Where do you want to go?")
 
 
