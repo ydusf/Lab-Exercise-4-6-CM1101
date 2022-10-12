@@ -150,6 +150,7 @@ def print_menu(exits):
         print_menu_line(exit, exit_leads_to(exits, exit))
     print()
     print("Where do you want to go?")
+    print()
 
 
 def is_valid_exit(exits, user_input):
