@@ -18,9 +18,9 @@ def remove_punct(text):
     >>> remove_punct(",go!So.?uTh")
     'goSouTh'
     """
+    new_text = ""
 
     for char in text:
-        new_text = ""
         if char in string.punctuation:
             char = ''
         new_text += char
@@ -60,7 +60,9 @@ def normalise_input(user_input):
     'help'
     """
     
-    return remove_punct(remove_spaces(user_input)).lower()
+    user_input = remove_punct(user_input)
+    user_input = remove_spaces(user_input)
+    return user_input.lower()
 
     
 def display_room(room):
@@ -88,6 +90,7 @@ def display_room(room):
     print(room["name"].upper())
     print()
     print(room["description"])
+    print()
     
 
 def exit_leads_to(exits, direction):
@@ -120,7 +123,7 @@ def print_menu_line(direction, leads_to):
     Go SOUTH to MJ and Simon's room.
     """
     
-    print("Go "+direction.upper()+" to the "+leads_to+".")
+    print("Go "+direction.upper()+" to "+leads_to+".")
 
 
 def print_menu(exits):
@@ -140,7 +143,6 @@ def print_menu(exits):
     """
 
     print("You can:")
-    print()
     
     # COMPLETE THIS PART:
     # Iterate over available exits:
@@ -148,9 +150,7 @@ def print_menu(exits):
 
     for exit in sorted(exits.keys()):
         print_menu_line(exit, exit_leads_to(exits, exit))
-    print()
     print("Where do you want to go?")
-    print()
 
 
 def is_valid_exit(exits, user_input):
