@@ -12,8 +12,7 @@ def remove_punct(text):
 
     >>> remove_punct("Hello, World!")
     'Hello World'
-    >>> remove_punct("-- ...Hey! -
-    - Yes?!...")
+    >>> remove_punct("-- ...Hey! -- Yes?!...")
     ' Hey  Yes'
     >>> remove_punct(",go!So.?uTh")
     'goSouTh'
